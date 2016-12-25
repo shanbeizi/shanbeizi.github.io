@@ -3,8 +3,74 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			width: 650px;
+			height: 420px;
+			overflow: hidden;
+		}
+		.pic-num{
+			width: 3250px;
+			height: 420px;
+		}
+		.pic-num li{
+			float: left;
+		}
+		.list-num li{
+			width: 30px;
+			height: 30px;
+			float: left;
+			border: 1px solid #000;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-	<h1>这是我的第一个网页</h1>
+	<div class="box">
+		<ul class="pic-num">
+			<li>
+				<img src="images/0.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/1.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/2.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/3.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/4.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+	<ul class="list-num">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".list-num li").click(function(){
+			var index = $(this).index();
+			var val = -650 * index;
+			console.log(val);
+			$(".pic-num").animate({"margin-left":val},500)
+
+		})
+
+	</script>
 </body>
 </html>
